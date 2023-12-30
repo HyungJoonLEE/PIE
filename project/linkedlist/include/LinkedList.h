@@ -25,10 +25,11 @@ public:
     const T& getValue();
     void setNext(LinkedList *elem);
     void setValue(const T &value);
-    void insert(LinkedList<T> **head, T val);
-    bool insertInFront(LinkedList<T> **head, T val); // TODO: Need to understand this
-    void deleteList(LinkedList<T> **head);
-
+    bool insertToLast(LinkedList<T> **head, T val);     // TODO: Need to understand this
+    bool insertToFront(LinkedList<T> **head, T val);    // TODO: Need to understand this
+    bool insertToIndex(LinkedList<T> **head, T val, int index);
+    bool deleteElement(LinkedList<T> **head, LinkedList<T> *delNode);
+    void clear(LinkedList<T> **head);
 
 
     // Stack Function using LinkedList
@@ -76,5 +77,7 @@ private:
     LinkedList  *next;
     T            data;
 };
+
+
 
 #endif //PIE_LINKEDLIST_H

@@ -19,27 +19,33 @@ card generateRandomCard() {
 
 int main() {
     std::srand(std::time(nullptr));
-    LinkedList<card>* head = nullptr; // Creates a head node with default card
+//    LinkedList<card>* head = nullptr; // Creates a head node with default card
+    LinkedList<int>* head = nullptr; // Creates a head node with default card
 
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < 5; i++) {
         card randomCard = generateRandomCard();
 //
 //        // TODO: This is for original LinkedList
-        head->insert(&head, randomCard);
-//        head->insertInFront(&head, randomCard);
+//        head->insertToFront(&head, randomCard);
+        head->insertToLast(&head, i);
 //
 //        // TODO: This is for stack using LinkedList
 //        head->push(&head, randomCard);
     }
+    head->insertToIndex(&head, 10, 5);
 
 //    for (auto it = head->begin(); it != head->end(); ++it) {
 //        card c = *it;
 //        std::cout << "Card: " << c.shape << " " << c.num << std::endl;
 //    }
 
+//    for (auto c : *head) {
+//        std::cout << "Card: " << c.shape << " " << c.num << std::endl;
+//    }
+
     for (auto c : *head) {
-        std::cout << "Card: " << c.shape << " " << c.num << std::endl;
+        std::cout << "Val: " << c  << std::endl;
     }
 
-    head->deleteList(&head);
+    head->clear(&head);
 }

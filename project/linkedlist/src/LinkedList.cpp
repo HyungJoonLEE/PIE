@@ -30,9 +30,18 @@ void LinkedList<T>::setValue(const T &value) {
 
 template<typename T>
 void LinkedList<T>::insert(LinkedList<T> **head, T val) {
-    auto *newElem = new LinkedList<T>(val);
-    newElem->next = *head;
-    *head = newElem;
+    auto *newNode = new LinkedList<T>(val);
+    if (*head == NULL) {
+        newNode->next = *head;
+        *head = newNode;
+    }
+    else {
+        LinkedList<T> *temp = *head;
+        while (temp->next) {
+            temp = temp->next;
+        }
+        temp->next = newNode;
+    }
 }
 
 
@@ -50,7 +59,7 @@ bool LinkedList<T>::insertInFront(LinkedList<T> **head, T val) {
 }
 
 
-/***
+/**
  * @breif Stack 'push' using Linked List
  */
 template<typename T>

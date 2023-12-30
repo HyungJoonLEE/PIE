@@ -1,6 +1,3 @@
-//
-// Created by Hyung Joon Lee on 2023-12-29.
-//
 #ifndef PIE_LINKEDLIST_H
 #define PIE_LINKEDLIST_H
 
@@ -19,7 +16,6 @@ public:
             next = new LinkedList<T>(*cp.next);
     }
 
-
     // LinkedList
     const LinkedList* getNext();
     const T& getValue();
@@ -28,12 +24,13 @@ public:
     bool insertToLast(LinkedList<T> **head, T val);     // TODO: Need to understand this
     bool insertToFront(LinkedList<T> **head, T val);    // TODO: Need to understand this
     bool insertToIndex(LinkedList<T> **head, T val, int index);
+    LinkedList<T>* search(LinkedList<T> **head, const T& value);
     bool deleteElement(LinkedList<T> **head, LinkedList<T> *delNode);
     void clear(LinkedList<T> **head);
 
-
     // Stack Function using LinkedList
-    void push(LinkedList<T> **head, T val);
+    bool push(LinkedList<T> **stack, T val);
+    bool pop(LinkedList<T> **stack);
 
 
     LinkedList& operator=(const LinkedList &rhs) {

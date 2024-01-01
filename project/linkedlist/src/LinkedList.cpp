@@ -2,13 +2,13 @@
 
 
 template<typename T>
-const LinkedList<T> *LinkedList<T>::getNext() {
+LinkedList<T> *LinkedList<T>::getNext() const {
     return next;
 }
 
 
 template<typename T>
-const T &LinkedList<T>::getValue() {
+T &LinkedList<T>::getData() const {
     return data;
 }
 
@@ -26,7 +26,7 @@ void LinkedList<T>::setValue(const T &value) {
 
 
 template<typename T>
-bool LinkedList<T>::insertToLast(LinkedList<T> **head, T val) {
+bool LinkedList<T>::insertAtLast(LinkedList<T> **head, T val) {
     auto *newNode = new LinkedList<T>(val);
 
     if (!newNode) return false;
@@ -48,7 +48,7 @@ bool LinkedList<T>::insertToLast(LinkedList<T> **head, T val) {
 
 
 template<typename T>
-bool LinkedList<T>::insertToFront(LinkedList<T> **head, T val) {
+bool LinkedList<T>::insertAtFront(LinkedList<T> **head, T val) {
     auto *newNode = new LinkedList<T>(val);
     if (newNode == nullptr) return false;
     else {
@@ -61,13 +61,14 @@ bool LinkedList<T>::insertToFront(LinkedList<T> **head, T val) {
 
 
 template<typename T>
-bool LinkedList<T>::insertToIndex(LinkedList<T> **head, T val, int index) {
+bool LinkedList<T>::insertAtIndex(LinkedList<T> **head, T val, int index) {
     LinkedList<T> *current = *head;
-    if (*head == nullptr) return false;
-    if (index <= 0) return false;
+    if (*head == nullptr)   return false;
+    if (index <= 0)         return false;
 
     auto *newNode = new LinkedList<T>(val);
-    if (!newNode) return false;
+    if (!newNode)           return false;
+
     if (index == 1) {
         *head = newNode;
         newNode->next = current;
@@ -196,18 +197,10 @@ void LinkedList<T>::clear(LinkedList<T> **head) {
     if (*head == nullptr) return;
     LinkedList<T> *delNode = *head;
     while (delNode) {
+        // Todo: if Node data used dynamic memory, need to delete as well
         LinkedList<T> *after = delNode->next;
-        delete delNode; // Use delete instead of free
+        delete delNode;
         delNode = after;
     }
     *head = nullptr;
 }
-
-
-
-
-
-
-
-
-

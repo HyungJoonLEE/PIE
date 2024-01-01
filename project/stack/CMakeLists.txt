@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.10)
-project(LINKEDLIST)
+project(STACK)
 
 # Include directories
 set(INCLUDE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/include")
@@ -13,7 +13,7 @@ file(GLOB_RECURSE PROJECT_FILES
         )
 
 # Add executable for this project
-add_executable(LINKEDLIST ${PROJECT_FILES})
+add_executable(STACK ${PROJECT_FILES})
 
-target_include_directories(LINKEDLIST PRIVATE ${INCLUDE_DIR})
-target_include_directories(LINKEDLIST PRIVATE ${SOURCE_DIR})
+target_include_directories(STACK PRIVATE ${INCLUDE_DIR})
+target_include_directories(STACK PRIVATE ${SOURCE_DIR})

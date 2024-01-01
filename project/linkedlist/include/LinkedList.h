@@ -17,21 +17,28 @@ public:
     }
 
     // LinkedList
-    const LinkedList* getNext();
-    const T& getValue();
+    LinkedList* getNext() const;
+    T& getData() const;
     void setNext(LinkedList *elem);
     void setValue(const T &value);
-    bool insertToLast(LinkedList<T> **head, T val);     // TODO: Need to understand this
-    bool insertToFront(LinkedList<T> **head, T val);    // TODO: Need to understand this
-    bool insertToIndex(LinkedList<T> **head, T val, int index);
+
+    // TODO: Need to understand this
+    bool insertAtFront(LinkedList<T> **head, T val);
+
+    // TODO: Need to understand this
+    bool insertAtLast(LinkedList<T> **head, T val);
+
+    // TODO: Need to understand this
+    bool insertAtIndex(LinkedList<T> **head, T val, int index);
+
     LinkedList<T>* search(LinkedList<T> **head, const T& value);
+
     bool deleteElement(LinkedList<T> **head, LinkedList<T> *delNode);
     void clear(LinkedList<T> **head);
 
     // Stack Function using LinkedList
     bool push(LinkedList<T> **stack, T val);
     bool pop(LinkedList<T> **stack);
-
 
     LinkedList& operator=(const LinkedList &rhs) {
         if (this != &rhs) {

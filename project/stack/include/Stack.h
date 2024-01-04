@@ -10,10 +10,12 @@ public:
     Stack();
     void push(const T& data);
     void pop();
-    const std::vector<T>& getStack() const;
+    const T& top();
+    bool isEmpty();
 
 private:
     std::vector<T> stackVector;
 };
+
 
 #endif //PIE_STACK_H

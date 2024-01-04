@@ -23,11 +23,15 @@ int main() {
     Stack<card> cardStack;
     for (int i = 0; i < 15; i++) {
         card randomCard = generateRandomCard();
+        std::cout << "Push Card: " << randomCard.shape << " " << randomCard.num << std::endl;
         cardStack.push(randomCard);
     }
 
-    for (const auto& c : cardStack.getStack()) {
-        std::cout << "Card: " << c.shape << " " << c.num << std::endl;
+    std::cout << "================= " << std::endl;
+
+    while (!cardStack.isEmpty()) {
+        std::cout << "Card Pop: " << cardStack.top().shape << " " << cardStack.top().num << std::endl;
+        cardStack.pop();
     }
 
     return 0;

@@ -2,7 +2,7 @@
 
 template<typename T>
 Stack<T>::Stack() {
-    stackVector.reserve(20); // Changed to '.' operator
+    stackVector.reserve(20);
 }
 
 template<typename T>

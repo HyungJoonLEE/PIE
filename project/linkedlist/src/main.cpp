@@ -24,7 +24,7 @@ int main() {
     for (int i = 0; i < 5; i++) {
         card randomCard = generateRandomCard();
 //        // TODO: This is for original LinkedList
-        head->insertToFront(&head, randomCard);
+        head->insertAtFront(&head, randomCard);
 //        // TODO: This is for stack using LinkedList
         head->push(&head, randomCard);
     }

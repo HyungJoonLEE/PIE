@@ -13,4 +13,5 @@ endif ()
 # Add subdirectories for each project
 add_subdirectory(project/linkedlist)
 add_subdirectory(project/stack)
+add_subdirectory(project/bst)
 
